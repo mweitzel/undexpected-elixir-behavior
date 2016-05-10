@@ -1,0 +1,44 @@
+Reproduction repository
+
+Unxpected behavior between elixir process and its parent *system* process.
+
+To verify expected and behavior, run
+
+  $ ./repro ruby-scripts
+  $ ./repro elixir-scripts
+
+Expected output, demonstrated with ruby
+# ----
+#
+# Hello, World! - a
+# Hello, World! - b
+#
+# ----
+#
+# Hello, World! - a
+# Hello, World! - b
+#
+# ----
+#
+# Hello, World! - a
+# Hello, World! - b
+#
+# ----
+
+Actual output using elixir
+# ----
+#
+# Hello, World! - a
+# Hello, World! - b
+#
+# ----
+#
+# Hello, World! - a
+#
+# ----
+#
+# Hello, World! - a
+# Hello, World! - b
+#
+# ----
+
